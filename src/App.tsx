@@ -1,8 +1,11 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { createWallPaper } from '##/components/engines/wallPaper/index';
 import { Navigate } from '##/view/Navigate';
+import { ButtonCheckOutTheme } from '##/components/global/buttonCheckOut/ButtonCheckOutTheme';
 import imagePath from '##/assets/svg/wallPaper_zvz.svg';
 import './App.scss';
+
+import styles from './testStyle.module.scss';
 
 function App() {
   const wallPaperRef = useRef<HTMLCanvasElement>(null);
@@ -18,6 +21,7 @@ function App() {
 
   return (
     <div className="App" id='App'>
+      <ButtonCheckOutTheme outerPositionClass={styles.ButtonCheckOutTheme} />
       <header>header</header>
       <main>main</main>
       <footer>footer</footer>

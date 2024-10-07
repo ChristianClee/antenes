@@ -1,0 +1,43 @@
+$pointerSize: 25px;
+$pictureSize: 20px;
+$pictureGap: 2px;
+%position {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+
+.container{
+  position: relative;
+  width: 90px;
+  height: 32px;
+  background-color: #AD7D01;
+  border: 2px solid black;
+  border-radius: 45px;
+}
+.pointer{
+  position: absolute;
+  width: $pointerSize;
+  height: $pointerSize;
+  top: 50%;
+  left: $pictureGap;
+  border: 1px solid black;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: #FFF700;
+  transition: all 300ms ease 0ms;
+}
+.pointerRight{
+  left: calc(100% - $pointerSize - $pictureGap);
+}
+.sun{
+  @extend %position;
+  left: 4px;
+}
+.moon{
+  @extend %position;
+  right: 4px;
+}
