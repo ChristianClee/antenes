@@ -1,15 +1,17 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import {createWallPaper} from './engines/wallPaper/index';
-import { Navigate } from '##/view/Navigate'
+import { createWallPaper } from '##/components/engines/wallPaper/index';
+import { Navigate } from '##/view/Navigate';
+import imagePath from '##/assets/svg/wallPaper_zvz.svg';
 import './App.css';
 
 function App() {
   const wallPaperRef = useRef<HTMLCanvasElement>(null);
   const isStartWallPaper = useRef<boolean>(true);
 
-  useLayoutEffect (()=> {    
+  useLayoutEffect (()=> {
+    
     if(!wallPaperRef.current) return;
-    createWallPaper(wallPaperRef.current, isStartWallPaper);
+    createWallPaper(wallPaperRef.current, imagePath, isStartWallPaper);
   }, [])
        
     

@@ -9,19 +9,15 @@ import {
 } from './init.variable';
 
 import { Lines, BaseCanvas, Ingine } from './classes';
-import imagePath from '../../assets/svg/wallPaper_zvz.svg';
 
-
-const image:HTMLImageElement = new Image();
-image.src = imagePath;
-
-
-export function getInitial(canvas:HTMLCanvasElement):{ 
+export function getInitial(canvas:HTMLCanvasElement, imagePath: string):{ 
   lines:Lines,
   baseCanvas: BaseCanvas,
   ingine: Ingine,
 }{
-  
+  const image:HTMLImageElement = new Image();
+  image.src = imagePath;
+
   let baseCanvas = new BaseCanvas(canvas, radius);
   let lines = new Lines(
     baseCanvas.canvas,

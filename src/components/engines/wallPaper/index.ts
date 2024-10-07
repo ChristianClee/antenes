@@ -3,16 +3,16 @@ import { getInitial } from './functions.perfom';
 import { TestIngine } from './classes';
 
 
-export function createWallPaper(canvas:HTMLCanvasElement, status: React.MutableRefObject<boolean>){
+export function createWallPaper(canvas:HTMLCanvasElement,imagePath: string, status: React.MutableRefObject<boolean>){
   
   if(!status.current) return;
   status.current = false;
   
-  let { lines, baseCanvas, ingine } = getInitial(canvas);
+  let { lines, baseCanvas, ingine } = getInitial(canvas, imagePath);
 
   window.addEventListener('resize', () => {  
     baseCanvas.removeEvents();
-    const initial = getInitial(canvas);
+    const initial = getInitial(canvas, imagePath);
     lines = initial.lines;
     baseCanvas = initial.baseCanvas;
     ingine = initial.ingine;
