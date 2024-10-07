@@ -25,7 +25,7 @@ export function createWallPaper(canvas:HTMLCanvasElement,imagePath: string, stat
     
     ingine.clearRect(baseCanvas.canvas.width, baseCanvas.canvas.height)
     ingine.drowLines(lines, interactionParamsMouse);
-    ingine.drowCircle()
+    ingine.drowCircle("rgba(200,0,0,0.3)")
     // window.requestAnimationFrame(draw) // this confuguration takes <150 hps> in my tests
     setTimeout(() => { draw() }, getDeley(fpsParams)); // this confuguration takes <60 hps> in my tests
   };

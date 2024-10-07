@@ -1,7 +1,6 @@
 
 export const widthElem = 50;
 export const heightElem = 30;
-// export const speed = 10;
 export const radius = 30;
 export const normalSpeed = 0.02;
 export const maxSpeed = 2;

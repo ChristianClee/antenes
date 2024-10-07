@@ -199,7 +199,7 @@ export class BaseCanvas{
   constructor(canvas: HTMLCanvasElement, radius: number = 30){
     this.canvas = canvas;
     this.radius = radius;
-    this.horizontGap = 50;
+    this.horizontGap = 30;
     this.verticalGap = 30;
     this.mouseX = null;
     this.mouseY = null;
@@ -214,36 +214,41 @@ export class BaseCanvas{
 
     this.canvas.width = displayWidth;
     this.canvas.height = displayHeight;
-    this.canvas.style.position = "absolute";
-    this.canvas.style.top = "0";
-    this.canvas.style.left = "0";
-    this.canvas.style.width = "100%";
-    this.canvas.style.height = "100%";
     // canvas.style.transformOrigin = 'top left'
     // canvas.style.background = "rgba(101, 111, 0, .2)";
 
     // this.canvas.style.transform = "rotate(30deg)"
     // document.body.style.overflow = 'hidden'
   }
-  private _bindEvents(){    
-    this.canvas.addEventListener('mousemove', this._getMouseXMouseY);
+  private _bindEvents(){
+    // this.canvas.addEventListener('mousemove', this._getMouseXMouseY);
+    document.addEventListener('mousemove', this._getMouseXMouseY);
   };
   public removeEvents(){
-    this.canvas.removeEventListener('mousemove', this._getMouseXMouseY);
+    // this.canvas.removeEventListener('mousemove', this._getMouseXMouseY);
+    document.removeEventListener('mousemove', this._getMouseXMouseY);
   };
   private _getMouseXMouseY = (event:MouseEvent) => {
-    this.mouseY = event.offsetY;
-    this.mouseX = event.offsetX;  
-    
-    if(this.canvas.width - this.horizontGap < event.offsetX
-      || this.horizontGap > event.offsetX ){
+    const isCanvas = event.target === this.canvas;
+    const isInGorizontBorder = this.canvas.width - this.horizontGap < event.offsetX
+    || this.horizontGap > event.offsetX;
+    const isInVerticalBorder = this.canvas.height - this.verticalGap < event.offsetY
+    || this.verticalGap > event.offsetY;
+
+    if(!isCanvas){
       this.mouseY = null;
-    }
-    if(this.canvas.height - this.verticalGap < event.offsetY
-      || this.verticalGap > event.offsetY
-    ){
+      this.mouseX = null;
+    }else if(isInGorizontBorder ){
       this.mouseY = null;
+      this.mouseX = null;
+    }else if(isInVerticalBorder){
+      this.mouseY = null;
+      this.mouseX = null;
+    }else{
+      this.mouseY = event.offsetY;
+      this.mouseX = event.offsetX;
     }
+
   };
 
 };
@@ -275,14 +280,15 @@ export class Ingine{
       }
     }
   };
-  public drowCircle(){
+  public drowCircle(color:string){
     if(this.baseCanvas.mouseX && this.baseCanvas.mouseY){
     
       this.ctx.beginPath();
       this.ctx.arc(this.baseCanvas.mouseX, this.baseCanvas.mouseY, this.baseCanvas.radius, 0, 2 * Math.PI, false); // Draw the circle
   
       // // Set the fill color and fill the circle
-      this.ctx.fillStyle = "rgba(200,0,0,0.3)"; // You can change the color
+      // this.ctx.fillStyle = "rgba(200,0,0,0.3)"; // You can change the color
+      this.ctx.fillStyle =  color; // You can change the color
       this.ctx.fill();
       // // Optionally, add a stroke around the circle
     }
