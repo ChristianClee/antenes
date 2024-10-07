@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef } from 'react';
 import { createWallPaper } from '##/components/engines/wallPaper/index';
 import { Navigate } from '##/view/Navigate';
 import imagePath from '##/assets/svg/wallPaper_zvz.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
   const wallPaperRef = useRef<HTMLCanvasElement>(null);
