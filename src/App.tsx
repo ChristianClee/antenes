@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import {createWallPaper} from './ingines/wallPaper/index';
-import { Navigate } from './view/Navigate'
+import {createWallPaper} from './engines/wallPaper/index';
+import { Navigate } from '##/view/Navigate'
 import './App.css';
 
 function App() {
@@ -11,8 +11,8 @@ function App() {
     if(!wallPaperRef.current) return;
     createWallPaper(wallPaperRef.current, isStartWallPaper);
   }, [])
-      
-   
+       
+    
 
   return (
     <div className="App" id='App'>
