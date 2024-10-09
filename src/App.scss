@@ -1,8 +1,21 @@
+:root {
+  --bg-color: #FFB801;
+  --wallPaper-item: 'red';
+}
+
+/* Dark Theme */
+.dark-theme{
+  --bg-color: #022734;
+  --wallPaper-item: 'white';
+}
+
+
 .App {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  background-color:  #FFB801;
+  background-color:  var(--bg-color);
+  transition: background-color 300ms ease 0ms ;
 }
 .wrapper{
   position: relative;
