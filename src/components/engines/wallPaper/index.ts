@@ -22,8 +22,9 @@ export function createWallPaper(canvas:HTMLCanvasElement,imagePath: string, stat
   const getDeley = TestIngine.getDelayByFps();
   // The engine
   function draw(){
-    
     ingine.clearRect(baseCanvas.canvas.width, baseCanvas.canvas.height)
+    console.log('sdfds');
+    
     ingine.drowLines(lines, interactionParamsMouse);
     ingine.drowCircle("rgba(200,0,0,0.3)")
     // window.requestAnimationFrame(draw) // this confuguration takes <150 hps> in my tests

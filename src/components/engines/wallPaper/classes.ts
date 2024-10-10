@@ -229,6 +229,7 @@ export class BaseCanvas{
     document.removeEventListener('mousemove', this._getMouseXMouseY);
   };
   private _getMouseXMouseY = (event:MouseEvent) => {
+    
     const isCanvas = event.target === this.canvas;
     const isInGorizontBorder = this.canvas.width - this.horizontGap < event.offsetX
     || this.horizontGap > event.offsetX;
