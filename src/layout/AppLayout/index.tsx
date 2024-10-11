@@ -1,23 +1,26 @@
-import React, { useRef,useLayoutEffect } from "react";
-import { createWallPaper } from '##/components/engines/wallPaper/index';
-import imagePath from '##/assets/svg/wallPaper_zvz.svg';
-import styles from "./index.module.scss";
+import React, { useRef,useLayoutEffect, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useAppSelector } from '##/store/hooks';
+import { createWallPaper } from '##/components/engines/wallPaper/index';
+import styles from "./index.module.scss";
 
 export const AppLayout = () => {
   const wallPaperRef = useRef<HTMLCanvasElement>(null);
-  const isStartWallPaper = useRef<boolean>(true);
+  const colorTheme = useAppSelector((state) => state.test.colorTheme); 
+  const colorThemeRef = useRef(colorTheme)
+  // console.log(colorTheme);
+
+  useEffect(()=>{
+    colorThemeRef.current = colorTheme;
+  }, [colorTheme])
 
   useLayoutEffect (()=> {
-    if(wallPaperRef.current){
-      console.log('start');
-      
-      createWallPaper(wallPaperRef.current,imagePath, isStartWallPaper);
-    }
+    if( !wallPaperRef.current ) return;
+    createWallPaper(wallPaperRef.current, colorThemeRef);
     return () => {
-      console.log('quite');
-      
-    }
+          //@ts-ignore
+      createWallPaper.stop = true
+    }  
   }, []);
   
   return (

@@ -10,18 +10,21 @@ import {
 
 import { Lines, BaseCanvas, Ingine } from './classes';
 
-export function getInitial(canvas:HTMLCanvasElement, imagePath: string):{ 
+export function getInitial(canvas:HTMLCanvasElement, imagesPath: {whiteThemeImgPath: string, darkThemeImgPath: string}):{ 
   lines:Lines,
   baseCanvas: BaseCanvas,
   ingine: Ingine,
 }{
-  const image:HTMLImageElement = new Image();
-  image.src = imagePath;
+  const imageWite:HTMLImageElement = new Image();
+  const imageDark:HTMLImageElement = new Image();
+  imageWite.src = imagesPath.whiteThemeImgPath;
+  imageDark.src = imagesPath.darkThemeImgPath;
+  const images = {imageWite, imageDark};
 
   let baseCanvas = new BaseCanvas(canvas, radius);
   let lines = new Lines(
     baseCanvas.canvas,
-    image,
+    images,
     widthElem, 
     heightElem,
     radius,

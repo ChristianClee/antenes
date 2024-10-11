@@ -1,18 +1,20 @@
+import whitePath from '##/assets/svg/wallPaper_zvz copy.svg'
+
 export class Item{
-  public img: HTMLImageElement;
+  public images: {imageWite:HTMLImageElement, imageDark:HTMLImageElement};
   public x: number;
   public y: number;
   public widthItem: number;
   public heightItem: number;
   
   constructor(
-    img: HTMLImageElement, 
+    images: {imageWite:HTMLImageElement, imageDark:HTMLImageElement}, 
     x: number,
     y: number,
     widthItem: number,
     heightItem: number,
   ){
-    this.img = img;
+    this.images = images;
     this.x = x;
     this.y = y;
     this.widthItem =  widthItem;
@@ -22,7 +24,7 @@ export class Item{
 
 export class Line{
   private countMaxElemWidth: number;
-  private image: HTMLImageElement;
+  private images: {imageWite:HTMLImageElement, imageDark:HTMLImageElement};
   public widthGap: number;
   private widthItem: number;
   public heightGap: number;
@@ -36,7 +38,7 @@ export class Line{
 
   constructor(
     countMaxElemWidth: number,
-    image: HTMLImageElement,
+    images: {imageWite:HTMLImageElement, imageDark:HTMLImageElement},
     widthGap: number,
     widthItem: number,
     heightItem: number,
@@ -46,7 +48,7 @@ export class Line{
     maxSpeed: number,
   ){
     this.countMaxElemWidth = countMaxElemWidth;
-    this.image = image;
+    this.images = images;
     this.widthItem = widthItem;
     this.widthGap = widthGap;
     this.heightItem = heightItem;
@@ -62,7 +64,7 @@ export class Line{
     const line: Item[] = [];
     
     for(let column = 0; column < this.countMaxElemWidth; column++){
-      const item = new Item(this.image, this._getCordinateX(column), this._getCordinateY(), this.widthItem, this.heightItem);
+      const item = new Item(this.images, this._getCordinateX(column), this._getCordinateY(), this.widthItem, this.heightItem);
       line.push(item);
     }
     return line;
@@ -93,7 +95,7 @@ export class Line{
 export class Lines{
   private countMaxElemWidth: number;
   private countMaxElemHeight: number;
-  private image: HTMLImageElement;
+  private images: {imageWite:HTMLImageElement, imageDark:HTMLImageElement};
   private widthGap: number;
   private widthItem: number;
   private heightItem: number;
@@ -107,7 +109,7 @@ export class Lines{
   private indexGapHeight: number; 
   constructor(
     canvas: HTMLCanvasElement,
-    image: HTMLImageElement,
+    images: {imageWite:HTMLImageElement, imageDark:HTMLImageElement},
     widthItem: number,
     heightItem: number,
     radius: number,
@@ -117,7 +119,7 @@ export class Lines{
     indexGapHeight: number,
   ){
     this.canvas = canvas;
-    this.image = image;
+    this.images = images;
     this.widthItem = widthItem;
     this.heightItem = heightItem;
     this.radius = radius;
@@ -138,7 +140,7 @@ export class Lines{
       
       const line = new Line(
         this.countMaxElemWidth,
-        this.image,
+        this.images,
         this.widthGap,
         this.widthItem,
         this.heightItem,
@@ -270,14 +272,18 @@ export class Ingine{
   public clearRect(width:number, height:number){
     this.ctx.clearRect(0, 0, width, height)
   };
-  public drowLines(lines: Lines, interaction: {boost: number, deceletation: number} ){
+  public drowLines(lines: Lines, interaction: {boost: number, deceletation: number}, colorThemeRef:React.MutableRefObject<string | null> ){
     for(let row of lines.items){
       if(interaction){
         this._interectionMose(row, lines, interaction.boost, interaction.deceletation);
       }
       for(let item of row.items){  
         this._moveDefaultSpeed(row, item);
-        this.ctx.drawImage(item.img, item.x, item.y, item.widthItem, item.heightItem);
+        let img = item.images.imageWite
+        if(colorThemeRef.current){
+          img = item.images.imageDark
+        }
+        this.ctx.drawImage(img, item.x, item.y, item.widthItem, item.heightItem);
       }
     }
   };

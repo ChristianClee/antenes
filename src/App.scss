@@ -1,12 +1,12 @@
 :root {
-  --bg-color: #FFB801;
-  --wallPaper-item: 'red';
+  --bg-color: #FFB801; // the color of main backgroud
+  --highlighted-buttons: #000000;
 }
 
 /* Dark Theme */
 .dark-theme{
   --bg-color: #022734;
-  --wallPaper-item: 'white';
+  --highlighted-buttons: #069DBF;
 }
 
 

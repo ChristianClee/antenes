@@ -15,7 +15,7 @@ function App() {
   function isDarkTheme():boolean{
     return Boolean(colorTheme);
   };
-  function toggleColorTheme(){    
+  function toggleColorTheme(){
     dispatch(setColorThemeInLocalStore())
   };
   function setCollorTheme(){
