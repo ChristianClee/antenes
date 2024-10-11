@@ -1,0 +1,23 @@
+:root {
+  --bg-color: #FFB801;
+  // color toggle ===============================
+  --bg-theme-toggle: #AD7D01;
+  --circle-theme-toggle: #FFF700;
+  // color buttons ==============================
+  --highlighted-buttons: #000000;
+
+
+  // constant variables =========================
+  // ============================================
+  --duration-color-theme: 300ms;
+}
+
+/* Dark Theme */
+.dark-theme{
+  --bg-color: #022734;
+  // color toggle ================================
+  --bg-theme-toggle: #069DBF;
+  --circle-theme-toggle: #00FFF2;
+  // color buttons ===============================
+  --highlighted-buttons: #069DBF;
+}

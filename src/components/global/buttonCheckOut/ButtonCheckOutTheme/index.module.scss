@@ -13,7 +13,7 @@ $pictureGap: 2px;
   position: relative;
   width: 90px;
   height: 32px;
-  background-color: #AD7D01;
+  background-color: var(--bg-theme-toggle);
   border: 2px solid black;
   border-radius: 45px;
   cursor: pointer;
@@ -27,8 +27,8 @@ $pictureGap: 2px;
   border: 1px solid black;
   transform: translateY(-50%);
   border-radius: 50%;
-  background-color: #FFF700;
-  transition: all 300ms ease 0ms;
+  background-color: var(--circle-theme-toggle);
+  transition: all var(--duration-color-theme) ease 0ms;
 }
 .pointerRight{
   left: calc(100% - $pointerSize - $pictureGap);

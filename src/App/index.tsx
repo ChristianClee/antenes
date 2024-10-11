@@ -3,11 +3,9 @@ import { Navigate } from '##/router';
 import { ButtonCheckOutTheme } from '##/components/global/buttonCheckOut/ButtonCheckOutTheme';
 import { useAppDispatch, useAppSelector } from '##/store/hooks';
 import { testActions } from '##/store/slices/testSlice';
+import styles from './index.module.scss';
 
-import './App.scss';
-import styles from './testStyle.module.scss';
-
-function App() {  
+export const App = () => {
   const { setColorThemeInLocalStore } = testActions;
   const colorTheme = useAppSelector((state) => state.test.colorTheme);  
   const dispatch = useAppDispatch()
@@ -33,11 +31,11 @@ function App() {
     
 
   return (
-    <div className="App" id='App'>
+    <div className={styles.App} id='App'>
       <ButtonCheckOutTheme outerPositionClass={styles.ButtonCheckOutTheme} toggleFunc={toggleColorTheme} status={isDarkTheme()} />
       <Navigate/>
     </div>
   );
 }
 
-export default App;
+
