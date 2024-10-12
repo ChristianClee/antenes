@@ -1,13 +1,14 @@
 .container{
   display: inline-block;
-  color: white;
+  color: var(--color-btn-one);
   font-size: 1.1rem;
   letter-spacing: 0.31rem;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid var(--color-btn-one);
   min-width: 8.75rem;
   border-radius: .5rem;
   text-align: center;
   padding: .2rem 1rem;
   user-select: none;
   cursor: pointer;
+  transition: color var(--duration-color-theme) ease 0, border var(--duration-color-theme) ease 0,;
 }
