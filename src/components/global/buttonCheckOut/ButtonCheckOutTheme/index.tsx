@@ -5,9 +5,9 @@ import {ReactComponent as Moon}  from "##/assets/svg/moon.svg";
 
 
 interface ChildProps {
-  outerPositionClass: string,
-  status: boolean,
-  toggleFunc: ()=> void,
+  outerPositionClass: string;
+  status: boolean;
+  toggleFunc: ()=> void;
 }
 
 export const ButtonCheckOutTheme: React.FC<ChildProps> = ({outerPositionClass, status, toggleFunc}) => {

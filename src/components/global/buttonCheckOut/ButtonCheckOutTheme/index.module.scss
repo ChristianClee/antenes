@@ -17,6 +17,8 @@ $pictureGap: 2px;
   border: 2px solid black;
   border-radius: 45px;
   cursor: pointer;
+  transition: background-color var(--duration-color-theme) ease 0ms;
+  overflow: hidden;
 }
 .pointer{
   position: absolute;
@@ -28,7 +30,7 @@ $pictureGap: 2px;
   transform: translateY(-50%);
   border-radius: 50%;
   background-color: var(--circle-theme-toggle);
-  transition: all var(--duration-color-theme) ease 0ms;
+  transition: left var(--duration-color-theme) ease 0ms;
 }
 .pointerRight{
   left: calc(100% - $pointerSize - $pictureGap);

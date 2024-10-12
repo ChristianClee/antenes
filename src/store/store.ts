@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { testReducer } from './slices/testSlice';
+import { contro_UI_Reducer } from './slices/contro_UI_Slice';
 
 export const store = configureStore({
   reducer: {
     test: testReducer,
+    contro_UI: contro_UI_Reducer,
   },
 })
 

@@ -43,17 +43,9 @@ export const testSlice = createSlice({
         setDarkTheme();
       }
     },
-    decrement: (state) => {
-      state.value -= 1
-    }, // todo, delete it
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload
-    }, // todo, delete it
   },
 })
 
-// Action creators are generated for each case reducer function
-// export const {  decrement, incrementByAmount } = testSlice.actions;
+
 export const testActions = testSlice.actions;
-// export const selectCount = (state: RootState) => state.test
 export const testReducer = testSlice.reducer;

@@ -11,6 +11,10 @@ html{
 body {
   text-rendering: optimizeLegibility;
 };
+#root{
+  min-height: 100vh;
+  overflow-x: hidden;
+};
 ul, ol {
   list-style: none;
 };
