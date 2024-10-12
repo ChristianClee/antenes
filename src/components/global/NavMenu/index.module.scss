@@ -4,7 +4,8 @@
   // bottom: 0;
   height: 45vh;
   width: 100%;
-  transition: background-color, bottom, var(--duration-color-theme) ease 0ms;
+  transition: background-color var(--duration-color-theme) ease 0ms, bottom var(--duration-menu-animation) ease 0ms;
+  
   background-color: var(--bg-nav-menu);
   // background-color: red; // testing
   box-shadow: 0px 0px 8px 1px #888;
@@ -15,15 +16,15 @@
 
 .closeLittleBtn{
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 1rem;
+  right: 1rem;
 }
 
 .closeBtn{
   display: none;
   position: absolute;
-  bottom: 15px;
-  right: 15px;
+  bottom: 1rem;
+  right: 1rem;
 }
 
 
@@ -45,6 +46,7 @@
   .container{
     bottom: auto;
     left: -100%;
+    transition: background-color var(--duration-color-theme) ease 0ms, left var(--duration-menu-animation) ease 0ms;
   }
   .openContainer{
     bottom: auto;

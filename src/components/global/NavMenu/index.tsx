@@ -1,9 +1,11 @@
 import React, { useEffect, useRef }from "react";
-import styles from "./index.module.scss";
 import { useAppSelector, useAppDispatch } from '##/store/hooks';
 import { contro_UI_Actions } from "##/store/slices/contro_UI_Slice"
 import { ButtonTypeOne as ButtonCloseMenu} from "##/components/global/buttons/ButtonTypeOne";
 import { ButtonTypeTwo as ButtonCloseMenuLittle } from "##/components/global/buttons/ButtonTypeTwo";
+import { timeVarables } from "##/varables/varables"
+import styles from "./index.module.scss";
+
 
 interface ChildProps {
   outerPositionClass: string,
@@ -23,7 +25,7 @@ export const NavMenu: React.FC<ChildProps> = ({outerPositionClass}) => {
     setTimeout(()=> {
       if(!wrapperRef.current ) return;
       wrapperRef.current.style.display = 'none'
-    } ,350)
+    } , timeVarables.deley)
   };
 
   function openWrapper(){
@@ -32,7 +34,7 @@ export const NavMenu: React.FC<ChildProps> = ({outerPositionClass}) => {
     setTimeout(()=> {
       if(!containerRef.current) return;
       containerRef.current.classList.add(styles.openContainer)
-    } ,350)
+    } , timeVarables.deley)
   };
   
   function getHideMenu(){

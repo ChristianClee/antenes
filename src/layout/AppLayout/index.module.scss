@@ -20,8 +20,8 @@
 .menuButton{
   position: absolute;
   z-index: 2;
-  bottom: 40px;
-  left: 40px;
+  bottom: 2.5rem;
+  left: 2.5rem;
 }
 
 
@@ -37,14 +37,14 @@
 @media (min-width : 950px){
   .navMenuOuter{
     height: 100%;
-    width: 320px;
+    width: 20rem;
     bottom: 0;
     top: 0;
     left: 0;
   }
   .menuButton{
     bottom: auto;
-    top: 15px;
+    top: 1rem;
     // left: px;
   }
 }
