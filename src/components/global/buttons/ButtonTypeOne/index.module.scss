@@ -2,7 +2,7 @@
   display: inline-block;
   color: var(--color-btn-one);
   font-size: 1.1rem;
-  letter-spacing: 0.31rem;
+  letter-spacing: 0.21rem;
   border: 2px solid var(--color-btn-one);
   min-width: 8.75rem;
   border-radius: .5rem;
@@ -10,5 +10,7 @@
   padding: .2rem 1rem;
   user-select: none;
   cursor: pointer;
-  transition: color var(--duration-color-theme) ease 0, border var(--duration-color-theme) ease 0,;
+  transition: color var(--duration-color-theme) ease 0, border var(--duration-color-theme) ease 0;
+  font-weight: bolder;
+
 }

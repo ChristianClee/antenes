@@ -45,7 +45,7 @@
 @media (min-width : 950px){
   .container{
     bottom: auto;
-    left: -100%;
+    left: -110%;
     transition: background-color var(--duration-color-theme) ease 0ms, left var(--duration-menu-animation) ease 0ms;
   }
   .openContainer{
