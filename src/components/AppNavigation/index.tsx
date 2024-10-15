@@ -3,9 +3,21 @@ import { useAppSelector, useAppDispatch } from '##/store/hooks';
 import { contro_UI_Actions } from "##/store/slices/contro_UI_Slice"
 import { ButtonTypeOne as ButtonCloseMenu} from "##/components/global/buttons/ButtonTypeOne";
 import { ButtonTypeTwo as ButtonCloseMenuLittle } from "##/components/global/buttons/ButtonTypeTwo";
-import { timeVarables } from "##/varables/varables"
+import { timeVarables } from "##/varables/varables";
+import { ReactComponent as CompanyLogo } from "##/assets/svg/Logo ZVZ.svg";
+import { ReactComponent as CompanyLogoDarkTheme } from "##/assets/svg/Logo ZVZ.white.svg";
+import { NavigateContent } from "##/components/AppNavigation/NavigateContent";
 import styles from "./index.module.scss";
+// testing imports
+import {ReactComponent as VectorOne} from "##/assets/svg/icons/VectorOne.svg"
+import {ReactComponent as VectorTwo} from "##/assets/svg/icons/VectorTwo.svg"
+import {ReactComponent as VectorThree} from "##/assets/svg/icons/VectorThree.svg"
 
+import{ReactComponent as SubVectorOne} from "##/assets/svg/icons/subVectorOne.svg";
+import{ReactComponent as SubVectorTwo} from "##/assets/svg/icons/subVectorTwo.svg";
+import{ReactComponent as SubVectorThree} from "##/assets/svg/icons/subVectorthree.svg";
+import{ReactComponent as SubVectorFour} from "##/assets/svg/icons/subVectorFour.svg";
+import{ReactComponent as SubVectorFive} from "##/assets/svg/icons/subVectorFive.svg";
 
 interface ChildProps {
   outerPositionClass: string,
@@ -14,10 +26,49 @@ interface ChildProps {
 
 export const NavMenu: React.FC<ChildProps> = ({outerPositionClass}) => {
   const isHideMenu = useAppSelector((state) => state.contro_UI.isHideMenu);
+  const colorTheme = useAppSelector((state) => state.test.colorTheme);
   const dispatch = useAppDispatch();
   const wrapperRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const isAnimationEndRef = useRef<Boolean>(true);
+  const options = [
+    {
+      name: "Divice",
+      icon: VectorOne,
+      options: [
+        {
+          name: "Coverage Aria",
+          icon: SubVectorOne,
+        },
+        {
+          name: "Rf Values",
+          icon: SubVectorTwo,
+        },
+        {
+          name: "Configuration values",
+          icon: SubVectorThree,
+        },
+        {
+          name: "Log Files",
+          icon: SubVectorFour,
+        },
+        {
+          name: "Network settings",
+          icon: SubVectorFive,
+        }
+      ]
+    },
+    {
+      name: "Home",
+      icon: VectorTwo,
+      options: [],
+    },
+    {
+      name: "Contacts",
+      icon: VectorThree,
+      options: [],
+    },
+]
  
   function closeWrapper(){
     if(!containerRef.current) return;
@@ -76,6 +127,17 @@ export const NavMenu: React.FC<ChildProps> = ({outerPositionClass}) => {
           outerPositionClass={styles.closeLittleBtn}
           func={ getHideMenu }
         />
+        {
+          colorTheme ?
+            <CompanyLogoDarkTheme
+              className={styles.logo}
+            />
+          :
+            <CompanyLogo 
+              className={styles.logo}
+            />
+        }
+        <NavigateContent outerPositionClass={styles.navigateContent} options={options}/>
       </div>
     </div>
   );

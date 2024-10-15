@@ -1,3 +1,5 @@
+@import "##/styles/mediaSizes";
+
 .wallPaper{
   position: absolute;
   width: 100%;
@@ -25,7 +27,7 @@
 }
 
 
-@media (min-width : 550px){
+@media (min-width : $media_ipad_one){
   .navMenuOuter{
     height: 30vh;
     width: 100%;
@@ -34,7 +36,7 @@
   }
 }
 
-@media (min-width : 950px){
+@media (min-width : $media_descTop_one){
   .navMenuOuter{
     height: 100%;
     width: 20rem;

@@ -1,13 +1,17 @@
 :root {
   --bg-color: #FFB801;
   // color toggle ===============================
-  --bg-theme-toggle: #AD7D01;
+  --bg-theme-toggle: #fab300;
   --circle-theme-toggle: #FFF700;
+  --shadow-theme-toggle: rgba(50, 50, 93, 0.25);
   // color buttons ==============================
   --highlighted-buttons: #000000;
   // color navigation menu =======================
   --bg-nav-menu: #FFBD12; 
   --color-btn-one: black;
+  // color scrolbar =============================
+  --bg-scrollbar-track: #b98501;
+  --scrollbar-thumb: rgb(58, 40, 3);
 
   // constant variables =========================
   // ============================================
@@ -19,11 +23,15 @@
 .dark-theme{
   --bg-color: #022734;
   // color toggle ================================
-  --bg-theme-toggle: #069DBF;
-  --circle-theme-toggle: #00FFF2;
+  --bg-theme-toggle: #033142;
+  --circle-theme-toggle: #01d6cc;
+  --shadow-theme-toggle: rgba(197, 197, 248, 0.25);
   // color buttons ===============================
   --highlighted-buttons: #069DBF;
   // color navigation menu =======================
   --bg-nav-menu: #002B3B;
   --color-btn-one: white;
+  // color scrolbar =============================
+  --bg-scrollbar-track: #045c7c;
+  --scrollbar-thumb: #049dd4;
 }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from '##/store/hooks';
 import { contro_UI_Actions } from "##/store/slices/contro_UI_Slice";
 import { createWallPaper } from '##/components/engines/wallPaper/index';
-import { NavMenu } from "##/components/global/NavMenu";
+import { NavMenu } from "##/components/AppNavigation";
 import { ButtonTypeOne as MenuButton } from "##/components/global/buttons/ButtonTypeOne";
 import styles from "./index.module.scss";
 

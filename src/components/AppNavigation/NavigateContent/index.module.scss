@@ -1,0 +1,124 @@
+@import "##/styles/mediaSizes";
+
+$minHeightOption: 3rem;
+$heightTitle: 3rem;
+.container{
+  // border: 1px solid black; // testing
+  min-width: 290px;
+  width: 90%;
+  margin: 0 auto;
+  height: 30vh;
+  user-select: none;
+}
+.title{
+  height: $heightTitle;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 9px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  // background-color: red;
+  position: relative;
+  &::after{
+    content: '';
+    position: absolute;
+    width: 11rem;
+    height: 2px;
+    background-color: black;
+    top: 1.8rem;
+    left: 49%;
+    transform: translateX(-50%);
+    
+  }
+}
+.body{
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - $heightTitle);
+  font-size: 1.1rem;
+  font-weight: 500;
+  overflow-y:  auto;
+  &::-webkit-scrollbar{
+    width: 10px;
+  };
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 4px 1px var(--bg-scrollbar-track);
+  }
+  &::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px var(--scrollbar-thumb);
+  }
+}
+.option{
+  // min-height:$minHeightOption;
+  // border: 1px solid rgb(0, 0, 0); // testing
+}
+.optionTitleWrapper{
+  min-height: $minHeightOption;
+  width: 100%;
+  // border: 1px solid red; // testing
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.274);
+  &:hover .optionTitle{
+    box-shadow: var(--shadow-theme-toggle) 0px 3px 6px 1px inset, var(--shadow-theme-toggle) 0px 1px 3px -1px inset; // day theme
+    border-radius: 0.5rem;
+  }
+}
+.optionTitle{
+  min-width: 90%;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  // border: 1px solid rgb(0, 0, 0); // testing  
+}
+.optionTitleActive{
+  border: 1px black solid;
+  // border-radius: 0.5rem;
+  background-color: black;
+  color: #FFB801;
+}
+// subOptions =============
+.subOptions{}
+.sybOptTitleWrapper{
+  min-height: $minHeightOption;
+  // border: 1px solid black; // testing
+  display: flex;
+  align-items: center;
+  &:hover .sybOptTitle{
+    box-shadow: var(--shadow-theme-toggle) 0px 3px 6px 1px inset, var(--shadow-theme-toggle) 0px 1px 3px -1px inset; // day theme
+    border-radius: 0.5rem;
+  }
+}
+.sybOptTitle{
+  margin-left: 1rem;
+  // border: 1px solid black; // testing
+  border-radius: 0.5rem;
+  min-width: 70%;
+  padding: 0.2rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+// subOptions =============
+
+
+
+.mainIconsActive{
+  fill: #FFB801
+}
+
+.mainIcons{
+  fill: black;
+  // stroke: black;
+}
+
+@media (min-width : $media_ipad_one){
+}
+@media ($media_descTop_one){}

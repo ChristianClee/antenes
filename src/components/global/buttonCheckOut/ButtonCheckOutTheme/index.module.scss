@@ -14,20 +14,19 @@ $pictureGap: 0.125rem;
   width: 5.62rem;
   height: 2rem;
   background-color: var(--bg-theme-toggle);
-  // border: 2px solid black;
-  // box-shadow: rgba(50, 50, 93, 0.25) 0px 3px 6px 1px inset, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px inset;
+  box-shadow: var(--shadow-theme-toggle) 0px 3px 6px 1px inset, var(--shadow-theme-toggle) 0px 1px 3px -1px inset; // day theme
   border-radius: 2.81rem;
   cursor: pointer;
   transition: background-color var(--duration-color-theme) ease 0ms;
   overflow: hidden;
 }
+
 .pointer{
   position: absolute;
   width: $pointerSize;
   height: $pointerSize;
   top: 50%;
   left: $pictureGap;
-  border: 1px solid black;
   transform: translateY(-50%);
   border-radius: 50%;
   background-color: var(--circle-theme-toggle);
@@ -39,8 +38,11 @@ $pictureGap: 0.125rem;
 .sun{
   @extend %position;
   left: 0.25rem;
+  fill: var(--color-btn-one);
+  
 }
 .moon{
   @extend %position;
   right: 0.25rem;
+  fill: var(--color-btn-one)
 }

@@ -1,3 +1,5 @@
+// ! without good Math's knowledge and OOP don't change anything 
+
 import whitePath from '##/assets/svg/wallPaper_zvz copy.svg'
 
 export class Item{
