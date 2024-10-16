@@ -1,5 +1,5 @@
-@import './rootVariables.scss';
-
+@import "./rootVariables.scss";
+@import "./mediaSizes.scss";
 
 @font-face {
   font-family: 'CustomFont';
@@ -14,7 +14,7 @@
   box-sizing: border-box;
 };
 html{
-  font-size: 16px;
+  font-size: 14px;
 };
 body {
   text-rendering: optimizeLegibility;
@@ -31,3 +31,12 @@ a {
   text-decoration: none;
   color: inherit;
 };
+
+@media (min-width : $media_ipad_one){
+  html{
+    font-size: 16px;
+  }
+}
+@media ($media_descTop_one){
+
+}

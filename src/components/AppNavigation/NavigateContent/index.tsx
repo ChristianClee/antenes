@@ -20,7 +20,6 @@ type ChildProps = {
 
 export const NavigateContent: React.FC<ChildProps> = ({outerPositionClass, options}) => {
   const [getIndexOption, setIndexOption] = useState<null| number >(0)
-console.log(getIndexOption);
 
   return (
     <div className={outerPositionClass}>
@@ -59,7 +58,11 @@ const Option: React.FC<PropOption> = ({option, index, indexSettings}) => {
   // console.log(option.icon);
   
   function setIndexOption(){
-    indexSettings.setIndexOption(index)    
+    if(indexSettings.getIndexOption === index){
+      indexSettings.setIndexOption(null)   
+    }else{
+      indexSettings.setIndexOption(index)
+    }
   }
   function getStyleOne(){
     return index === indexSettings.getIndexOption 
@@ -73,7 +76,10 @@ const Option: React.FC<PropOption> = ({option, index, indexSettings}) => {
   }
 
   return(
-    <div className={styles.option}>
+    <div 
+      className={styles.option} 
+      style={index === indexSettings.getIndexOption ? {height: "10rem", transition: "height 500ms ease 0ms"}: {height: 'none',transition: "height 500ms ease 0ms"}}
+    >
       <div className={styles.optionTitleWrapper}
         onClick={setIndexOption}
       >
@@ -84,9 +90,7 @@ const Option: React.FC<PropOption> = ({option, index, indexSettings}) => {
       </div>
       <div className={styles.subOptions}>
         {
-          index === indexSettings.getIndexOption
-            &&
-          option.options.map((item, index) => 
+          option.options.map((item, index) =>
             <SubOption subOption={item} key={index + item.name + Math.random()}/>
           )
         }

@@ -1,6 +1,6 @@
 @import "##/styles/mediaSizes";
 
-$minHeightOption: 3rem;
+$heightOption: 3rem;
 $heightTitle: 3rem;
 .container{
   // border: 1px solid black; // testing
@@ -51,18 +51,24 @@ $heightTitle: 3rem;
     box-shadow: inset 0 0 6px var(--scrollbar-thumb);
   }
 }
-.option{
-  // min-height:$minHeightOption;
-  // border: 1px solid rgb(0, 0, 0); // testing
+.option{ // !!! the is testing
+  position: relative;
+  height: $heightOption;
+  overflow: hidden;
+  transition: height 500ms ease 0ms;
+  border: 1px solid red; // testing
 }
-.optionTitleWrapper{
-  min-height: $minHeightOption;
+
+.optionTitleWrapper{ // !!! the is testing
   width: 100%;
   // border: 1px solid red; // testing
   display: flex;
   align-items: center;
   cursor: pointer;
-  background-color: rgba(255, 0, 0, 0.274);
+  
+  position: relative;
+  height: $heightOption;
+  // background-color: rgba(255, 0, 0, 0.274); // testing
   &:hover .optionTitle{
     box-shadow: var(--shadow-theme-toggle) 0px 3px 6px 1px inset, var(--shadow-theme-toggle) 0px 1px 3px -1px inset; // day theme
     border-radius: 0.5rem;
@@ -84,12 +90,17 @@ $heightTitle: 3rem;
   color: #FFB801;
 }
 // subOptions =============
-.subOptions{}
+.subOptions{
+  position: absolute;
+  top: $heightOption;
+  left: 0;
+}
 .sybOptTitleWrapper{
-  min-height: $minHeightOption;
+  min-height: $heightOption;
   // border: 1px solid black; // testing
   display: flex;
   align-items: center;
+  cursor: pointer;
   &:hover .sybOptTitle{
     box-shadow: var(--shadow-theme-toggle) 0px 3px 6px 1px inset, var(--shadow-theme-toggle) 0px 1px 3px -1px inset; // day theme
     border-radius: 0.5rem;
