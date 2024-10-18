@@ -33,7 +33,7 @@ export const NavMenu: React.FC<ChildProps> = ({outerPositionClass}) => {
   const isAnimationEndRef = useRef<Boolean>(true);
   const options = [
     {
-      name: "Divice",
+      name: "Device",
       icon: VectorOne,
       options: [
         {
@@ -88,9 +88,9 @@ export const NavMenu: React.FC<ChildProps> = ({outerPositionClass}) => {
     } , timeVarables.deley)
   };
   
-  function getHideMenu(){
+  function setHideMenu(){
     if(!isAnimationEndRef.current) return 
-    dispatch(contro_UI_Actions.getHideMenu())
+    dispatch(contro_UI_Actions.setHideMenu())
   }
 
   useEffect(()=>{
@@ -111,7 +111,7 @@ export const NavMenu: React.FC<ChildProps> = ({outerPositionClass}) => {
       className={outerPositionClass}
       ref={ wrapperRef }
       onClick={(e)=>{
-        if(e.currentTarget === e.target ){ getHideMenu() }
+        if(e.currentTarget === e.target ){ setHideMenu() }
       }} 
     >
       <div
@@ -120,12 +120,12 @@ export const NavMenu: React.FC<ChildProps> = ({outerPositionClass}) => {
       >
         <ButtonCloseMenu 
           outerPositionClass={styles.closeBtn}
-          func={ getHideMenu }
+          func={ setHideMenu }
           text="Close"
         />
         <ButtonCloseMenuLittle
           outerPositionClass={styles.closeLittleBtn}
-          func={ getHideMenu }
+          func={ setHideMenu }
         />
         {
           colorTheme ?

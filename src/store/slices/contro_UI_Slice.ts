@@ -5,11 +5,15 @@ import type { RootState } from '../store';
 
 export interface Contro_UI {
   isHideMenu: boolean;
+  numbOption: number | null;
+  numbSubOption: number | null;
 }
 
 const initialState: Contro_UI = {
   // isHideMenu: true, // * repair it later
   isHideMenu: false, // tresting data
+  numbOption: null,
+  numbSubOption: null,
 }
 
 export const contro_UI = createSlice({
@@ -19,9 +23,16 @@ export const contro_UI = createSlice({
     toggleHideMenu(state){
       state.isHideMenu = !state.isHideMenu;
     },
-    getHideMenu(state){
+    setHideMenu(state){
       state.isHideMenu = true;
     },
+    setNumbOption(state, actions:PayloadAction<number | null>){
+      state.numbOption = actions.payload
+    },
+    setNumbSubOption(state, actions:PayloadAction<number | null>){
+      state.numbSubOption = actions.payload
+    }
+
   },
 })
 

@@ -46,23 +46,44 @@
     height: 100%;
   }
   .closeLittleBtn{
+    // display: none;
+  }
+
+  .logo{
+    bottom: auto;
+    top: .5rem;
+    left: 2rem;
+    left: auto;
+    width: 5rem; // testing
+    height: 7vh; // testing
+    // border: 1px solid white; // testing
+    transform: none;
+    margin-left: 2rem;
+  }
+  .navigateContent{
+    width: 100%;
+    position: absolute;
+    // left: 1rem;
+    transform: none;
+  } 
+}
+
+@media (min-width: $madia_ipad_two){
+  .closeLittleBtn{
     display: none;
   }
   .closeBtn{
     display: block;
   }
   .logo{
-    bottom: auto;
-    top: 1rem;
-    right: 2rem;
-    left: auto;
-    transform: none;
-  }
-  .navigateContent{
     position: absolute;
-    left: 1rem;
-    transform: none;
-  } 
+    top: .5rem;
+    right: 2.5rem;
+    height: 8vh;
+    bottom: auto;
+    left: auto;
+    // transform: translateX(-50%);
+  }
 }
 
 @media (min-width : $media_descTop_one){

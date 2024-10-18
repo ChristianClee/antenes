@@ -9,6 +9,10 @@
   // color navigation menu =======================
   --bg-nav-menu: #FFBD12; 
   --color-btn-one: black;
+  --color-btn-two: black;
+  // color text =================================
+  --color-text-one: black;
+  --color-text-two: #FFB801;
   // color scrolbar =============================
   --bg-scrollbar-track: #b98501;
   --scrollbar-thumb: rgb(58, 40, 3);
@@ -16,7 +20,9 @@
   // constant variables =========================
   // ============================================
   --duration-color-theme: 300ms;
-  --duration-menu-animation: 500ms;
+  --duration-menu-animation: 700ms;
+  --duration-button-animation: 300ms;
+  // --duration-menu-animation-middel:
 }
 
 /* Dark Theme */
@@ -31,6 +37,11 @@
   // color navigation menu =======================
   --bg-nav-menu: #002B3B;
   --color-btn-one: white;
+  --color-btn-two: #069DBF;
+  // color text =================================
+  --color-text-one: white;
+  --color-text-two: white;
+  // --color-text-two: #002B3B;
   // color scrolbar =============================
   --bg-scrollbar-track: #045c7c;
   --scrollbar-thumb: #049dd4;

@@ -1,3 +1,4 @@
+@import "##/styles/mediaSizes";
 $pointerSize: 1.56rem;
 $pictureSize: 1.25rem;
 $pictureGap: 0.125rem;
@@ -16,7 +17,6 @@ $pictureGap: 0.125rem;
   background-color: var(--bg-theme-toggle);
   box-shadow: var(--shadow-theme-toggle) 0px 3px 6px 1px inset, var(--shadow-theme-toggle) 0px 1px 3px -1px inset; // day theme
   border-radius: 2.81rem;
-  cursor: pointer;
   transition: background-color var(--duration-color-theme) ease 0ms;
   overflow: hidden;
 }
@@ -45,4 +45,10 @@ $pictureGap: 0.125rem;
   @extend %position;
   right: 0.25rem;
   fill: var(--color-btn-one)
+}
+
+@media (min-width: $media_ipad_one){
+  .container{
+    cursor: pointer;
+  }
 }

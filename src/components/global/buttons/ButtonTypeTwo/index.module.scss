@@ -1,9 +1,9 @@
+@import "##/styles/mediaSizes";
 $size: 2.4rem;
 .container{
   width: $size;
   height: $size;
   position: relative;
-  cursor: pointer;
 }
 .container span{
   display: block;
@@ -64,5 +64,11 @@ $size: 2.4rem;
   }
   100%{
     transform: translateY(-50%) rotate(-45deg);
+  }
+}
+
+@media (min-width: $media_ipad_one){
+  .container{
+    cursor: pointer;
   }
 }

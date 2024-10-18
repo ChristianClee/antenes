@@ -2,6 +2,11 @@
 
 $heightOption: 3rem;
 $heightTitle: 3rem;
+
+$percentWidthIpadMenu: 50%;
+
+
+
 .container{
   // border: 1px solid black; // testing
   min-width: 290px;
@@ -18,14 +23,14 @@ $heightTitle: 3rem;
   text-transform: capitalize;
   display: flex;
   justify-content: center;
-  // background-color: red;
+  color: var(--color-text-one);
   position: relative;
   &::after{
     content: '';
     position: absolute;
     width: 11rem;
     height: 2px;
-    background-color: black;
+    background-color: var(--color-text-one);
     top: 1.8rem;
     left: 49%;
     transform: translateX(-50%);
@@ -34,15 +39,15 @@ $heightTitle: 3rem;
 }
 .body{
   // border: 1px solid red;
-  display: flex;
-  flex-direction: column;
   width: 100%;
   height: calc(100% - $heightTitle);
   font-size: 1.1rem;
   font-weight: 500;
   overflow-y:  auto;
+  color: var(--color-text-one);
+  
   &::-webkit-scrollbar{
-    width: 10px;
+    width: 5px;
   };
   &::-webkit-scrollbar-track {
     box-shadow: inset 0 0 4px 1px var(--bg-scrollbar-track);
@@ -55,42 +60,63 @@ $heightTitle: 3rem;
   position: relative;
   height: $heightOption;
   overflow: hidden;
-  transition: height 500ms ease 0ms;
-  border: 1px solid red; // testing
+  transition: height var(--duration-menu-animation) ease 0ms;
+  // border: 1px solid red; // testing
+  
 }
-
 .optionTitleWrapper{ // !!! the is testing
-  width: 100%;
   // border: 1px solid red; // testing
   display: flex;
   align-items: center;
-  cursor: pointer;
-  
   position: relative;
   height: $heightOption;
+  width: 100%;
+  // cursor: pointer;
+  filter: blur(0px);
   // background-color: rgba(255, 0, 0, 0.274); // testing
   &:hover .optionTitle{
-    box-shadow: var(--shadow-theme-toggle) 0px 3px 6px 1px inset, var(--shadow-theme-toggle) 0px 1px 3px -1px inset; // day theme
+    box-shadow: var(--shadow-theme-toggle) 0px 3px 6px 1px inset, var(--shadow-theme-toggle) 0px 1px 3px -1px inset;
     border-radius: 0.5rem;
+    filter: blur(0px);
   }
 }
 .optionTitle{
+  position: relative;
   min-width: 90%;
-  padding: 0.2rem 0.5rem;
+  padding: 0.3rem 0.5rem;
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
+  filter: blur(1px);
   gap: 0.5rem;
-  // border: 1px solid rgb(0, 0, 0); // testing  
+  overflow: hidden;
+  // border: 1px solid rgb(0, 0, 0); // testing
+  // color: white;
+  // transition: color 0ms ease var(--duration-button-animation);
+  transition: color var(--duration-button-animation) ease 0s, border 0ms ease var(--duration-button-animation);
+  &:before{
+    content: '';
+    transition: width var(--duration-button-animation) ease 0s;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--color-btn-two);
+    z-index: -1;
+  }
 }
 .optionTitleActive{
-  border: 1px black solid;
-  // border-radius: 0.5rem;
-  background-color: black;
-  color: #FFB801;
+  border: 1px var(--color-btn-one) solid;
+  font-weight: 800;
+  color: var(--color-text-two);
+  filter: blur(0px);
+  &:before{
+    width: 100%;
+  }
 }
 // subOptions =============
-.subOptions{
+.subOptions{ // !!! the is testing
   position: absolute;
   top: $heightOption;
   left: 0;
@@ -100,10 +126,11 @@ $heightTitle: 3rem;
   // border: 1px solid black; // testing
   display: flex;
   align-items: center;
-  cursor: pointer;
+  // cursor: pointer;
   &:hover .sybOptTitle{
     box-shadow: var(--shadow-theme-toggle) 0px 3px 6px 1px inset, var(--shadow-theme-toggle) 0px 1px 3px -1px inset; // day theme
     border-radius: 0.5rem;
+    filter: blur(0px);
   }
 }
 .sybOptTitle{
@@ -111,25 +138,276 @@ $heightTitle: 3rem;
   // border: 1px solid black; // testing
   border-radius: 0.5rem;
   min-width: 70%;
-  padding: 0.2rem 0.5rem;
+  padding: 0.3rem 0.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  filter: blur(1px);
 }
-
+.sybOptTitleActive{
+  border: 1px var(--color-btn-one) solid;
+  font-weight: 800;
+  box-shadow: var(--shadow-theme-toggle) 0px 3px 6px 1px inset, var(--shadow-theme-toggle) 0px 1px 3px -1px inset;
+  color: var(--color-text-one);
+  filter: blur(0px);
+}
 // subOptions =============
 
 
 
 .mainIconsActive{
-  fill: #FFB801
+  fill: var(--color-text-two);
 }
 
 .mainIcons{
-  fill: black;
-  // stroke: black;
+  fill: var(--color-text-one);
+  transition: fill var(--duration-button-animation);
 }
 
-@media (min-width : $media_ipad_one){
+.subIcons{
+  fill: var(--color-text-one);
 }
-@media ($media_descTop_one){}
+
+@media (min-width: $media_ipad_one){ // !!! media Ipad size
+  .container{
+    max-width:550px;
+    height: 25vh;
+    margin: 0 0 0 1rem;
+    
+    // border: 1px solid black; // testing
+  }
+  .body{
+    // border: 1px solid red;
+  }
+  .option{
+    // width: 55%;
+    // border: 1px solid red; // testing
+    overflow: visible;
+    // height: 222px;
+  }
+
+  .optionTitleWrapper{
+    // display: inline-block;
+    // border: 1px solid green; // testing
+    width: $percentWidthIpadMenu;
+    cursor: pointer;
+    z-index: 2;
+    background-color: var(--bg-nav-menu);   
+  }
+  .optionTitle{
+  }
+  .subOptions{
+    width: 50%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: left var(--duration-button-animation) ease var(--duration-button-animation);
+    
+    
+    &>:nth-child(1){ 
+      z-index: 10;
+      top: 0rem;
+    }
+    &>:nth-child(2){ 
+      z-index: 9;
+      top: 0rem;
+      // transition: top 200ms linear 200ms;
+    }
+    &>:nth-child(3){ 
+      z-index: 8;
+      top: 0rem;
+      // transition: top 200ms linear 300ms;
+    }
+    &>:nth-child(4){ 
+      z-index: 7;
+      top: 0rem;
+      // transition: top 200ms linear 400ms;
+    }
+    &>:nth-child(5){ 
+      z-index: 6;
+      top: 0rem;
+      // transition: top 200ms linear 500ms;
+    }
+    &>:nth-child(6){ 
+      z-index: 5;
+      top: 0rem;
+      // transition: top 200ms linear 600ms;
+    }
+    &>:nth-child(7){ 
+      z-index: 4;
+      top: 0rem;
+      // transition: top 200ms linear 700ms;
+    }
+    &>:nth-child(8){ 
+      z-index: 3;
+      top: 0rem;
+      // transition: top 200ms linear 800ms;
+    }
+    &>:nth-child(9){ 
+      z-index: 2;
+      top: 0rem;
+      // transition: top 200ms linear 900ms;
+    }
+    &>:nth-child(10){ 
+      z-index: 1;
+      top: 0rem;
+      // transition: top 200ms linear 1000ms;
+    }
+  }
+  .subOptionActive{
+    top: 0;
+    left: $percentWidthIpadMenu;
+    &>:nth-child(1){ 
+      z-index: 10;
+      top: 0rem;
+    }
+    &>:nth-child(2){ 
+      z-index: 9;
+      animation: moveDown1 300ms forwards calc(var(--duration-button-animation)*2);
+    }
+    &>:nth-child(3){ 
+      z-index: 8;
+      animation: moveDown2 300ms forwards calc(var(--duration-button-animation)*3);
+    }
+    &>:nth-child(4){ 
+      z-index: 7;
+      animation: moveDown3 300ms forwards calc(var(--duration-button-animation)*4);
+    }
+    &>:nth-child(5){ 
+      z-index: 6;
+      animation: moveDown4 300ms forwards calc(var(--duration-button-animation)*5);
+    }
+    &>:nth-child(6){ 
+      z-index: 5;
+      animation: moveDown5 300ms forwards calc(var(--duration-button-animation)*6);
+    }
+    &>:nth-child(7){ 
+      z-index: 4;
+      animation: moveDown6 300ms forwards calc(var(--duration-button-animation)*7);
+    }
+    &>:nth-child(8){ 
+      z-index: 3;
+      animation: moveDown7 300ms forwards calc(var(--duration-button-animation)*8);
+    }
+    &>:nth-child(9){ 
+      z-index: 2;
+      animation: moveDown8 300ms forwards calc(var(--duration-button-animation)*9);
+    }
+    &>:nth-child(10){ 
+      z-index: 1;
+      animation: moveDown9 300ms forwards calc(var(--duration-button-animation)*10);
+    }
+  }
+  .sybOptTitleWrapper{
+    position: absolute;
+    width: 100%;
+    background-color: var(--bg-nav-menu);
+    cursor: pointer;
+    // border: 1px solid gray
+  }
+  .sybOptTitle{
+    margin-left: 0;
+    min-width: 90%;
+    // background-color: red;
+  }
+}
+@media (min-width: $media_descTop_one){
+  .container{
+    max-width:none;
+    height: 70vh;
+    // border: 1px solid red;
+    // margin: 0 0 0 1rem;
+  }
+  .option{
+    overflow: hidden;
+  }
+  .optionTitleWrapper{
+    background-color:transparent;
+    width: 100%;
+  }
+  .subOptions{
+    width: 100%;
+    width: auto;
+    margin-left: 1rem;
+    top: $heightOption;;
+  }
+  .sybOptTitleWrapper{
+    position: static;
+    background-color: transparent;
+  }
+}
+
+
+
+@keyframes moveDown1{
+  0%{
+    top: 0;
+  }
+  100%{
+    top: 3rem
+  }
+}
+@keyframes moveDown2{
+  0%{
+    top: 0;
+  }
+  100%{
+    top: 6rem
+  }
+}
+@keyframes moveDown3{
+  0%{
+    top: 0;
+  }
+  100%{
+    top: 9rem
+  }
+}
+@keyframes moveDown4{
+  0%{
+    top: 0;
+  }
+  100%{
+    top: 12rem
+  }
+}
+@keyframes moveDown5{
+  0%{
+    top: 0;
+  }
+  100%{
+    top: 15rem
+  }
+}
+@keyframes moveDown6{
+  0%{
+    top: 0;
+  }
+  100%{
+    top: 18rem
+  }
+}
+@keyframes moveDown7{
+  0%{
+    top: 0;
+  }
+  100%{
+    top: 21rem
+  }
+}
+@keyframes moveDown8{
+  0%{
+    top: 0;
+  }
+  100%{
+    top: 24rem
+  }
+}
+@keyframes moveDown9{
+  0%{
+    top: 0;
+  }
+  100%{
+    top: 27rem
+  }
+}
