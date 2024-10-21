@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/antenes/static/css/main.d6021f40.css",
-    "main.js": "/antenes/static/js/main.490fd316.js",
+    "main.css": "/antenes/static/css/main.1bc049c7.css",
+    "main.js": "/antenes/static/js/main.fe4b1af3.js",
     "static/js/453.ed3810f9.chunk.js": "/antenes/static/js/453.ed3810f9.chunk.js",
     "static/media/Jura-VariableFont_wght.ttf": "/antenes/static/media/Jura-VariableFont_wght.8b9338810a4d628fd950.ttf",
     "static/media/Logo ZVZ.svg": "/antenes/static/media/Logo ZVZ.bf5f6ac661fc8f9f171299bda5755897.svg",
@@ -19,12 +19,12 @@
     "static/media/moon.svg": "/antenes/static/media/moon.8158f9c9ea23440e409ab1f2ab541398.svg",
     "static/media/subVectorOne.svg": "/antenes/static/media/subVectorOne.7eb5f59ea22c2895447d65560e755130.svg",
     "index.html": "/antenes/index.html",
-    "main.d6021f40.css.map": "/antenes/static/css/main.d6021f40.css.map",
-    "main.490fd316.js.map": "/antenes/static/js/main.490fd316.js.map",
+    "main.1bc049c7.css.map": "/antenes/static/css/main.1bc049c7.css.map",
+    "main.fe4b1af3.js.map": "/antenes/static/js/main.fe4b1af3.js.map",
     "453.ed3810f9.chunk.js.map": "/antenes/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6021f40.css",
-    "static/js/main.490fd316.js"
+    "static/css/main.1bc049c7.css",
+    "static/js/main.fe4b1af3.js"
   ]
 }
