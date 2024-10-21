@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/antenes/static/css/main.d6021f40.css",
+    "main.js": "/antenes/static/js/main.833c8524.js",
+    "static/js/453.ed3810f9.chunk.js": "/antenes/static/js/453.ed3810f9.chunk.js",
+    "static/media/Jura-VariableFont_wght.ttf": "/antenes/static/media/Jura-VariableFont_wght.8b9338810a4d628fd950.ttf",
+    "static/media/Logo ZVZ.svg": "/antenes/static/media/Logo ZVZ.bf5f6ac661fc8f9f171299bda5755897.svg",
+    "static/media/Logo ZVZ.white.svg": "/antenes/static/media/Logo ZVZ.white.38a23b88e3e19c5cf3ff28495c88bdc0.svg",
+    "static/media/subVectorTwo.svg": "/antenes/static/media/subVectorTwo.45f339630b5016e24fd94b0e585ab8b6.svg",
+    "static/media/wallPaper_zvz_black_theme.svg": "/antenes/static/media/wallPaper_zvz_black_theme.fde5af144fcb5174bf027bc6cee7def2.svg",
+    "static/media/wallPaper_zvz.svg": "/antenes/static/media/wallPaper_zvz.ab1500f2a7d5dfb738736f69fde0d135.svg",
+    "static/media/sun.svg": "/antenes/static/media/sun.f3b241eae726693eed18d7fc5a24e142.svg",
+    "static/media/subVectorthree.svg": "/antenes/static/media/subVectorthree.78c3f29a8ec6945c534655430ab7d00d.svg",
+    "static/media/VectorOne.svg": "/antenes/static/media/VectorOne.26ca559fda565e5c215f25cd6a974643.svg",
+    "static/media/subVectorFour.svg": "/antenes/static/media/subVectorFour.0ad0310b1fd4bf2d97af968eb9cb8f1a.svg",
+    "static/media/subVectorFive.svg": "/antenes/static/media/subVectorFive.28f86c999b88b1a26d69fba8b83b78a6.svg",
+    "static/media/VectorTwo.svg": "/antenes/static/media/VectorTwo.ad76fd3474137bf8ba3037a9087035a3.svg",
+    "static/media/VectorThree.svg": "/antenes/static/media/VectorThree.0d90b7582a764ff978c25d22ae8ee703.svg",
+    "static/media/moon.svg": "/antenes/static/media/moon.8158f9c9ea23440e409ab1f2ab541398.svg",
+    "static/media/subVectorOne.svg": "/antenes/static/media/subVectorOne.7eb5f59ea22c2895447d65560e755130.svg",
+    "index.html": "/antenes/index.html",
+    "main.d6021f40.css.map": "/antenes/static/css/main.d6021f40.css.map",
+    "main.833c8524.js.map": "/antenes/static/js/main.833c8524.js.map",
+    "453.ed3810f9.chunk.js.map": "/antenes/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d6021f40.css",
+    "static/js/main.833c8524.js"
+  ]
+}
