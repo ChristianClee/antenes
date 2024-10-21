@@ -71,7 +71,6 @@ $percentWidthIpadMenu: 50%;
   position: relative;
   height: $heightOption;
   width: 100%;
-  // cursor: pointer;
   filter: blur(0px);
   // background-color: rgba(255, 0, 0, 0.274); // testing
   &:hover .optionTitle{
@@ -126,7 +125,6 @@ $percentWidthIpadMenu: 50%;
   // border: 1px solid black; // testing
   display: flex;
   align-items: center;
-  // cursor: pointer;
   &:hover .sybOptTitle{
     box-shadow: var(--shadow-theme-toggle) 0px 3px 6px 1px inset, var(--shadow-theme-toggle) 0px 1px 3px -1px inset; // day theme
     border-radius: 0.5rem;
@@ -190,7 +188,6 @@ $percentWidthIpadMenu: 50%;
     // display: inline-block;
     // border: 1px solid green; // testing
     width: $percentWidthIpadMenu;
-    cursor: pointer;
     z-index: 2;
     background-color: var(--bg-nav-menu);   
   }
@@ -302,7 +299,7 @@ $percentWidthIpadMenu: 50%;
     position: absolute;
     width: 100%;
     background-color: var(--bg-nav-menu);
-    cursor: pointer;
+    // cursor: pointer;
     // border: 1px solid gray
   }
   .sybOptTitle{
@@ -324,7 +321,9 @@ $percentWidthIpadMenu: 50%;
   .optionTitleWrapper{
     background-color:transparent;
     width: 100%;
+    cursor: pointer;
   }
+  
   .subOptions{
     width: 100%;
     width: auto;
@@ -334,6 +333,7 @@ $percentWidthIpadMenu: 50%;
   .sybOptTitleWrapper{
     position: static;
     background-color: transparent;
+     cursor: pointer;
   }
 }
 

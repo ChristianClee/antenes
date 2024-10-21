@@ -1,5 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import styles from "./index.module.scss";
+import { useNavigate, useLocation } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "##/store/hooks";
 import { contro_UI_Actions } from "##/store/slices/contro_UI_Slice";
 
@@ -7,10 +8,12 @@ import { contro_UI_Actions } from "##/store/slices/contro_UI_Slice";
 interface SubOptionI {
   name: string;
   icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>> | null;
+  path: string;
 }
 interface OptionsI {
   name: string;
   icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  path: string;
   options: SubOptionI[]    
 }
 interface PropOption{
@@ -19,6 +22,7 @@ interface PropOption{
 }
 interface PropSubtitle {
   subOption: SubOptionI;
+  perantPath: string;
   index: number;
 }
 type ChildProps = {
@@ -28,7 +32,6 @@ type ChildProps = {
 
 
 export const NavigateContent: React.FC<ChildProps> = ({outerPositionClass, options}) => {
-  // const [getIndexOption, setIndexOption] = useState<null| number >(0)
 
   return (
     <div className={outerPositionClass}>
@@ -57,7 +60,8 @@ const Option: React.FC<PropOption> = ({option, index,}) => {
   const numbOption = useAppSelector((state) => state.contro_UI.numbOption);
   const dispatch = useAppDispatch();
   const optionTitleWrapperRef = useRef<HTMLDivElement>(null)
-  
+  const navigate = useNavigate();
+
   function isIpad(){
     const media_ipad_one = 500;
     const media_descTop_one = 950;
@@ -72,6 +76,7 @@ const Option: React.FC<PropOption> = ({option, index,}) => {
       dispatch(contro_UI_Actions.setNumbOption(null));   
     }else{
       dispatch(contro_UI_Actions.setNumbOption(index));
+      navigate(option.path)
     }
   };
   function getStyleOne(){
@@ -122,7 +127,12 @@ const Option: React.FC<PropOption> = ({option, index,}) => {
       <div className={getStyleFour()}>
         {
           option.options.map((item, index) =>
-            <SubOption subOption={item} index={index} key={index + item.name + Math.random()}/>
+            <SubOption
+              subOption={item}
+              perantPath={option.path}
+              index={index}
+              key={index + item.name + Math.random()}
+            />
           )
         }
       </div>
@@ -131,15 +141,17 @@ const Option: React.FC<PropOption> = ({option, index,}) => {
 }
 
 
-const SubOption: React.FC<PropSubtitle> = ({subOption, index}) => {
+const SubOption: React.FC<PropSubtitle> = ({subOption, index, perantPath}) => {
   const numbSubOption = useAppSelector((state) => state.contro_UI.numbSubOption);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+  
   function setIndexOption(){
-    if(index === numbSubOption){
-      dispatch(contro_UI_Actions.setNumbSubOption(null));   
-    }else{
-      dispatch(contro_UI_Actions.setNumbSubOption(index));
-    }
+    if(index === numbSubOption) return;
+    dispatch(contro_UI_Actions.setNumbSubOption(index)); 
+    navigate(perantPath + subOption.path);
+    
   };
   function getStyleOne(){
     return index === numbSubOption 
@@ -151,14 +163,14 @@ const SubOption: React.FC<PropSubtitle> = ({subOption, index}) => {
     <div className={styles.sybOptTitleWrapper} 
       onClick={ setIndexOption }
     >
-        <div className={getStyleOne()} >
-          {
-            subOption.icon
-            &&
-            <subOption.icon className={styles.subIcons}/>
-          }
-          <span>{subOption.name}</span>
-        </div>
+      <div className={getStyleOne()} >
+        {
+          subOption.icon
+          &&
+          <subOption.icon className={styles.subIcons}/>
+        }
+        <span>{subOption.name}</span>
+      </div>
     </div>
   );
 } 

@@ -1,3 +1,5 @@
+@import "##/styles/mediaSizes";
+
 .container{
   display: inline-block;
   color: var(--color-btn-one);
@@ -9,8 +11,11 @@
   text-align: center;
   padding: .2rem 1rem;
   user-select: none;
-  cursor: pointer;
   transition: color var(--duration-color-theme) ease 0, border var(--duration-color-theme) ease 0;
   font-weight: bolder;
-
+}
+@media (min-width:$media_descTop_one ){
+  .container{
+    cursor: pointer;
+  }
 }

@@ -35,37 +35,45 @@ export const NavMenu: React.FC<ChildProps> = ({outerPositionClass}) => {
     {
       name: "Device",
       icon: VectorOne,
+      path: 'device',
       options: [
         {
           name: "Coverage Aria",
           icon: SubVectorOne,
+          path: '/coverage_aria',
         },
         {
           name: "Rf Values",
           icon: SubVectorTwo,
+          path: '/rf_values',
         },
         {
           name: "Configuration values",
           icon: SubVectorThree,
+          path: '/configuration_values',
         },
         {
           name: "Log Files",
           icon: SubVectorFour,
+          path: '/log_files',
         },
         {
           name: "Network settings",
           icon: SubVectorFive,
+          path: '/network_settings',
         }
       ]
     },
     {
       name: "Home",
       icon: VectorTwo,
+      path: '/',
       options: [],
     },
     {
       name: "Contacts",
       icon: VectorThree,
+      path: '/contacts',
       options: [],
     },
 ]
